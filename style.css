@@ -1,0 +1,790 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    /* purple */
+    --clr-primary-400: 263 55% 52%;
+    /* greyed-out navy blue */
+    --clr-secondary-400: 217 19% 35%;
+    /* navy blue */
+    --clr-secondary-500: 219 29% 14%;
+    /* white */
+    --clr-neutral-100: 11, 0%, 94%;
+    --clr-neutral-200: 210 46% 95%;
+    --clr-neutral-300: 0 0% 81%;
+
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Raleway", sans-serif;
+    /* --background: rgba(0, 214, 170, .85); */
+
+    --fw-300: 300;
+    --fw-400: 500;
+    --fw-700: 600;
+
+    --fs-title: 5rem;
+    --fs-300: 0.6875rem;
+    --fs-400: 0.8125rem;
+    --fs-500: 1.25rem;
+}
+
+.bg-primary-400 {
+    background: hsl(var(--clr-primary-400));
+}
+
+.bg-secondary-400 {
+    background: hsl(var(--clr-secondary-400));
+}
+
+.bg-secondary-500 {
+    background: hsl(var(--clr-secondary-500));
+}
+
+.bg-neutral-100 {
+    background: hsl(var(--clr-neutral-100));
+}
+
+.bg-movie-tile {
+    background: hsl(var(--clr-neutral-300))
+}
+
+.text-neutral-100 {
+    color: hsl(var(--clr-neutral-100));
+}
+
+.text-secondary-400 {
+    color: hsl(var(--clr-secondary-400));
+}
+
+.text-secondary-500 {
+    color: hsl(var(--clr-secondary-500));
+}
+
+.border-primary-400 {
+    border: 2px solid #a775f1;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/* --------------- NAV MENU SECTION ----------------- */
+
+.tabs-top {
+    background: hsl(var(--clr-neutral-100));
+    text-align: center;
+    position: fixed;
+    z-index: 600;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 7rem;
+    margin-top: -10px;
+}
+
+.tabs-top .logo {
+    position: absolute;
+    margin-top: -2rem;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: 0; */
+    width: 9rem;
+    height: 4.5rem;
+}
+
+nav {
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    left: 0;
+    background: hsl(var(--clr-neutral-100));
+    width: 100%;
+    /* This is meant for the 'nav-toggle' pseudo class
+    it needs to be unseen so that the checked pseudo class will make sense */
+    /* display: none; */
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+nav a {
+    color: var(--clr-secondary-500);
+    text-decoration: none;
+    font-family: var(--ff-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: 150ms ease-in-out;
+}
+
+
+
+/* ----------------- NAV BURGER SHAPE------------------ */
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: hsl(var(--clr-secondary-500));
+    height: 2px;
+    width: 2rem;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    /* Even tho i don't want any content, it's needed otherwise
+    nothing will show up */
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* The ~ looks for any preceeding, it doesn't have to be immediately
+after it tho */
+.nav-toggle:checked~nav {
+    display: block;
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked~nav a {
+    opacity: 1;
+    transition: 250ms ease-in-out 250ms;
+}
+
+/* .tabs-top a {
+    background-color: #19202D;
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    border-radius: 18px;
+    border: solid #19202d;
+}
+
+.tabs-top a:hover {
+    border: solid #D94423;
+    color: #D94423;
+    background-color: rgba(255, 255, 255, 0.879);
+} */
+
+
+/* ----------TITLE SECTION----------- */
+
+.title {
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    width: min(95%, 70rem);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background: #D94423;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+}
+
+.left-title {
+    grid-column: 1 / 3;
+    padding: 2rem;
+}
+
+h1 {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-title);
+    text-align: start;
+}
+
+.img-wrapper {
+    max-height: 350px;
+    display: flex;
+    justify-content: right;
+
+}
+
+.img-wrapper img {
+    margin: auto;
+    max-height: 350px;
+
+}
+
+.title p {
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-300);
+    font-size: var(--fs-400);
+    margin-top: -50px;
+}
+
+
+/* ----------MAP IMAGE----------- */
+
+.mall-map {
+    padding-top: 7rem;
+    width: min(95%, 70rem);
+    margin: auto;
+}
+
+.mall-map img {
+    width: min(100%, 70rem);
+    border-radius: 0.5rem;
+
+
+}
+
+
+
+/* -----------ABOUT PAGE----------- */
+
+
+/* this is applied to the contact info aswell contact info  */
+.about-info {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-400);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: min(95%, 70rem);
+    margin: auto;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+}
+
+.about-pics {
+    display: flex;
+    gap: 1rem;
+    width: min(95%, 70rem);
+    margin: auto;
+}
+
+.about-pics img {
+    display: flex;
+    width: 1fr 1fr 1fr;
+    width: min(95%, 70rem);
+
+}
+
+.about-info li {
+    list-style: none;
+}
+
+
+/* -----------CONTACT PAGE----------- */
+
+
+.contact-pics img {
+    width: min(100%, 70rem);
+    padding-bottom: 2rem;
+}
+
+.contact-pics {
+    width: min(95%, 70rem);
+    margin: auto;
+}
+
+.contact-form {
+    width: min(95%, 70rem);
+    margin: auto;
+    padding-top: 5rem;
+    border: hsl(var(--clr-secondary-500)) solid;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+label {
+    font-family: var(--ff-secondary);
+}
+
+input[type=text],
+select,
+textarea {
+    font-family: var(--ff-secondary);
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+        /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: hsl(var(--clr-secondary-500));
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+/* -----------SHOPS TABS----------- */
+
+.shops-tabs {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: min(95%, 70rem);
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+}
+
+.category {
+    display: flex;
+    container-type: inline-size;
+    gap: 1.5rem;
+    border-radius: 6px;
+    padding: 14px;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+}
+
+.category img {
+    height: 100px;
+    width: 100px;
+    float: left;
+    border-radius: 4px;
+    /* aspect-ratio: 14/18; */
+
+}
+
+.cat-icon {
+    flex-basis: 100px;
+    align-content: center;
+    /* background-color: white; */
+
+}
+
+.cat-info {
+
+    flex-grow: 1;
+    flex-shrink: 2;
+
+}
+
+.cat-info h2 {
+    font-family: var(--ff-primary);
+}
+
+.cat-button {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cat-info p {
+    font-family: var(--ff-secondary);
+}
+
+.cat-button h3 {
+    font-family: var(--ff-primary);
+    text-decoration: none;
+    background-color: #D94423;
+    color: white;
+    border-radius: 4px;
+    margin: 4px;
+    padding: 5px;
+
+}
+
+
+.cat-button img {
+
+    margin: auto;
+    height: 40px;
+    width: 40px;
+    aspect-ratio: 14/18;
+}
+
+/* --------------CINEMA - MOVIE BLOCK -------------- */
+
+.movie-blocks {
+    width: min(95%, 70rem);
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 50px;
+
+}
+
+.movie-tile {
+    background: hsl(var(--clr-neutral-300));
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+    display: flex;
+    align-content: center;
+    /* justify-content: center; */
+    flex-flow: column;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.movie-tile h3 {
+    font-family: var(--ff-primary);
+    background-color: hsl(var(--clr-secondary-500));
+    padding: 10px;
+    border-radius: 10px;
+    color: hsl(var(--clr-neutral-100));
+}
+
+.movie-tile h2 {
+    font-family: var(--ff-primary);
+    word-wrap: break-word;
+}
+
+
+/* -------------- MOVIE INFO PAGES -------------- */
+
+.movie-info-title {
+    padding-top: 7rem;
+}
+
+.movie-info-title h1 {
+    text-align: center;
+}
+
+.movie-info {
+    width: min(95%, 70rem);
+    font-family: var(--ff-secondary);
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.movie-info img {
+    width: min(95%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-grid-left {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    gap: 0.5rem;
+}
+
+.img-grid-left img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.info-grid-right {
+    grid-column-start: 2;
+}
+
+/* .movie-info-data h3 {
+    border-radius: 0.5rem;
+    width: fit-content;
+    padding: 0.8rem;
+} */
+
+.movie-info-button {
+    border-radius: 0.5rem;
+    width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+
+}
+
+
+
+
+/* --------------HOME PAGE -------------- */
+
+.specials-grid {
+    padding-block: 2rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;
+    display: grid;
+    gap: 1.5rem;
+    /* grid-auto-columns: 1fr; */
+    grid-template-areas:
+        'one'
+        'two'
+        'three'
+        'four'
+        'five';
+}
+
+.special:nth-child(1) {
+    grid-area: one;
+}
+
+.special:nth-child(2) {
+    grid-area: two;
+}
+
+.special:nth-child(3) {
+    grid-area: three;
+}
+
+.special:nth-child(4) {
+    grid-area: four;
+}
+
+.special:nth-child(5) {
+    grid-area: five;
+}
+
+.special {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-400);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.flex img {
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.special .item {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+    line-height: 1;
+}
+
+.special .store {
+    font-size: var(--fs-300);
+    opacity: 0.5;
+}
+
+.special>p:first-of-type {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: var(--fw-300);
+    font-size: var(--fs-500);
+    line-height: 1.2;
+}
+
+
+
+
+/* -------------Media and container queries------------- */
+
+@media (min-width: 740px) {
+
+
+
+
+    .specials-grid {
+        grid-template-areas:
+            'one one'
+            'two five'
+            'three five'
+            'four four';
+    }
+
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .tabs-top {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+
+    }
+
+    .tabs-top .logo {
+        position: relative;
+        grid-column: 2 / span 1;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3 / 4;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 1.8rem;
+    }
+
+    nav a {
+        opacity: 1;
+    }
+
+
+
+}
+
+
+@media screen and (min-width: 850px) {
+
+    .specials-grid {
+        grid-template-areas:
+            'one one two five'
+            'three four four five';
+    }
+}
+
+
+@media (max-width:945px) {
+    .movie-blocks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-pics {
+        display: flex;
+        flex-flow: column;
+        height: auto;
+        margin: auto;
+        width: min(100%, 70rem);
+        align-items: center;
+    }
+
+}
+
+
+
+
+@media (max-width: 739px) {
+
+    .title {
+        all: unset;
+        margin: auto;
+        width: min(95%, 70rem);
+        padding-top: 10rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        align-items: center;
+        background: #D94423;
+        border-radius: 0.5rem;
+        box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+    }
+
+    .left-title {
+        grid-row: 2 / 3;
+        text-align: center;
+
+    }
+
+    .left-title h1 {
+        text-align: center;
+    }
+
+    .img-wrapper {
+        display: flex;
+        justify-items: center;
+    }
+
+
+
+
+    .category {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .cat-icon {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 8px;
+    }
+
+    .cat-button {
+        gap: 15px;
+    }
+
+    .cat-button h3 {
+        text-align: center;
+        width: 35%;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .cat-info {
+        text-align: center;
+    }
+
+
+    /* --------------CINEMA - MOVIE BLOCK -------------- */
+    .movie-blocks {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    /* -------------- MOVIE INFO PAGES -------------- */
+
+    .movie-info {
+        display: flex;
+        flex-flow: column;
+    }
+
+}

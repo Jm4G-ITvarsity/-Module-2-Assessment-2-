@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="(min-width: 739px)" href="style.css">
+    <link rel="stylesheet" media="(max-width: 740px)" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Contact page</title>
+</head>
+
+<body>
+
+    <div class="tabs-top">
+        <img class="logo" src="Shop logos/Asset 2.png" alt="Pine City Mall Logo">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li> <a href="shops.html">Shopping</a></li>
+            </ul>
+        </nav>
+        <!-- for="nav-toggle" will NOT look for a class. It will look for an ID" -->
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </div>
+
+    <div class="movie-info-title">
+        <h1>Contact Us</h1>
+    </div>
+
+    <div class="contact-pics">
+        <img src=" PNG/contact-pic(2).jpg" alt="mall pic">
+
+    </div>
+
+    <div class="about-info bg-secondary-500 text-neutral-100">
+        <p>We’re here to make your shopping experience at Pine Mall as seamless and enjoyable as possible. Reach out to
+            us or visit the mall during our business hours for any inquiries or assistance.</p>
+
+        <p><b>Address:</b><br>
+            Pine Mall, Independence Avenue
+            Windhoek, Namibia</p>
+
+        <p><b>Phone:</b><br>+264 61 123 4567</p>
+
+        <p><b>Email:</b><br>
+            info@pinemall.com</p>
+
+        <p><b>Business Hours</b></p>
+        <ul>
+            <li>Monday to Friday: <b>9:00 AM – 9:00 PM</b></li>
+            <li>Saturday: <b>9:00 AM – 8:00 PM</b></li>
+            <li>Sunday: <b>10:00 AM – 6:00 PM</b></li>
+            <li> Public Holidays: <b>10:00 AM – 5:00 PM</b></li>
+        </ul>
+    </div>
+
+    <div class="contact-form">
+        <form>
+
+            <label for="fname">First Name:</label>
+
+            <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
+
+            <label for="lname">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Your email..">
+            <br>
+
+            <!-- <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="australia">Namibia</option>
+                <option value="canada">South Africa</option>
+                <option value="usa">Botswana</option>
+            </select><br> -->
+
+            <label for="subject">Subject:</label>
+            <textarea id="subject" name="subject" placeholder="Tell us whats on your mind..."
+                style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
